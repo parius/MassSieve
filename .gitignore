@@ -10,3 +10,4 @@
 /MassSieve-core/test_out/*
 /MassSieve-cli/test_out/*
 /target/
+/*/massieve.*.db
