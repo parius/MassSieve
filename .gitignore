@@ -11,3 +11,8 @@
 /MassSieve-cli/test_out/*
 /target/
 /*/massieve.*.db
+/.settings/
+/MassSieve-cli/.settings/
+/MassSieve-core/.settings/
+/masssieve-web/.settings/
+/MassSieve-desktop/.settings/

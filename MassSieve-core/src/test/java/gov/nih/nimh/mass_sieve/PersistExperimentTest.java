@@ -39,11 +39,12 @@ public class PersistExperimentTest extends TestBase {
 		final String outFileName = "save_experiments.bin";
 		final File outFile = new File(TestConstants.DIR_OUT, outFileName);
 		man.saveExperimentsBundle(eb, outFile);
+                
+                testLoadExperiment(outFile);
 	}
 
-	@Test
-	public void testLoadExperiment() throws DataStoreException {
-		final File expFile = new File(TestConstants.DIR_DATA, "load_experiments.bin.gz");
+	private void testLoadExperiment(File expFile) throws DataStoreException {
+
 		assertTrue("Test file must exist: " + expFile.getAbsolutePath(), expFile.exists());
 
 		final ExperimentsBundle eb = man.loadExperimentsBundle(expFile);
