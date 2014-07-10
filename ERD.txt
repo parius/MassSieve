@@ -1,0 +1,116 @@
+#
+# This is a sample text file for Erviz 1.0.4. (Tutorial 03)
+#
+
+# 
+# Cardinality and Optionality (Mandatory)
+# 
+# If a cardinality symbol is "1", it indicates as follows:
+#   * The cardinality is ONE.
+#   * The optionality is MANDATORY.
+# 
+# If a cardinality symbol is "+", it indicates as follows:
+#   * The cardinality is MANY.
+#   * The optionality is MANDATORY.
+# 
+
+{title: "MassSieve ERD"}
+
+[PeptideCollection]
+*PeptideCollection ID
+ cluster_num: int
+ countablesCount: Integer
+ minPeptides: HashMap<String, Peptide>
+ minProteins: HashMap<String, Protein>
+ clusters: HashMap<Integer, PeptideCollection>
+ experimentSet: HashSet<String> experimentSet
+ peptideHits: ArrayList<PeptideHit> peptideHits
+ equivalents:ArrayList<Protein>
+ subsets:ArrayList<Protein>
+ supersets:ArrayList<Protein>
+ subsumables:ArrayList<Protein>
+ differentiables:ArrayList<Protein>
+ discretes:ArrayList<Protein>
+ countables:ArrayList<Protein>
+
+
+[PeptideHit]
+queryNum: int
+scanNum
+expMass
+expNeutralMass
+theoreticalMass
+diffMass
+sequence
+modSequence
+expect
+ionScore
+ident
+xcorr
+pepProphet
+hasPepProphet
+Z
+indeterminate
+sourceType
+pepXML
+sourceFile
+rawFile
+experiment
+
+[PeptideHit.proteinNames]
+ protein name
+ PeptideHit ID*
+
+[ProteinHit]
+start
+end
+name
+
+[Peptide]
+sequence: String
+peptideHits: ArrayList<PeptideHit>
+uniqueScanNumbers: HashSet<String>
+omssa: List<PeptideHit>
+mascot: List<PeptideHit>
+xtandem: List<PeptideHit>
+sequest: List<PeptideHit>
+pepxml: List<PeptideHit>
+proteinSet: HashSet<String>
+experimentSet: HashSet<String>
+experimentList
+fileSet: HashSet<String>
+fileList: String
+proteinList: List<Protein>
+cluster: int
+pType: ParsimonyType
+indeterminateType: PeptideIndeterminacyType
+theoreticalMass: double
+
+
+[PeptideCollection] 1--* [Peptide]
+
+[Peptide] 1--* [PeptideHit] <List{PeptideHit} peptideHits>
+
+[PeptideCollection] 1--* [minPeptides]
+[PeptideCollection] 1--* [minProteins]
+[PeptideCollection] 1--* [clusters]
+[minPeptides] 1--1 [Peptide]
+[minProteins] 1--1 [Protein]
+[clusters] 1--1 [PeptideCollection]
+
+[minPeptides]
+ sequence name
+ Peptide ID*
+
+[minProteins]
+ sequence name
+ Protein ID*
+
+[clusters]
+ integer
+ PeptideCollection ID*
+
+
+[PeptideHit] 1--* [ProteinHit] <Set{ProteinHit} proteinHits>
+[PeptideHit] 1--* [PeptideHit.proteinNames] <Set{String} proteinNames>
+

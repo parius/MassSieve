@@ -1,0 +1,92 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>massieve-parent</artifactId>
+		<groupId>com.bioproximity</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.bioproximity</groupId>
+	<artifactId>MassSieve-desktop</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>MassSieve-desktop</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.bioproximity</groupId>
+			<artifactId>MassSieve-core</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.swinglabs</groupId>
+			<artifactId>swing-layout</artifactId>
+			<version>1.0.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.doolin</groupId>
+			<artifactId>javadocking</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.biojava</groupId>
+			<artifactId>gui</artifactId>
+			<version>1.8</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>net.java.dev.glazedlists</groupId>
+			<artifactId>glazedlists_java15</artifactId>
+			<version>1.8.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>prefuse</groupId>
+			<artifactId>prefuse</artifactId>
+			<version>2007.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jhlabs</groupId>
+			<artifactId>jhlayouts</artifactId>
+			<version>20110707</version>
+		</dependency>
+
+		<!-- mvn install:install-file -Dfile=GlazedListsAux.jar -DgroupId=net.java.dev.glazedlists 
+			-DartifactId=aux -Dversion=1.8.0 -Dpackaging=jar -->
+		<dependency>
+			<groupId>net.java.dev.glazedlists</groupId>
+			<artifactId>aux</artifactId>
+			<version>1.8.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.collections</groupId>
+			<artifactId>google-collections</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+</project>
